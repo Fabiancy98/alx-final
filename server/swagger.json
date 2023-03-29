@@ -1,0 +1,231 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "New Collection",
+    "version": "1.0.0"
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "schemes": ["http"],
+  "paths": {
+    "/signup": {
+      "post": {
+        "tags": ["signup"],
+        "summary": "Creates a new user",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "User object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User created successfully"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": ["login"],
+        "summary": "Logs a user in",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "User credentials",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Credentials"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User logged in successfully"
+          }
+        }
+      }
+    },
+    "/logout": {
+      "post": {
+        "tags": ["logout"],
+        "summary": "Logs a user out",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "User logged out successfully"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/generate-otp": {
+      "post": {
+        "tags": ["otp"],
+        "summary": "Generates an OTP for a user",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "User email",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Email"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OTP generated successfully"
+          }
+        }
+      }
+    },
+    "/verify-otp": {
+      "post": {
+        "tags": ["otp"],
+        "summary": "Verifies an OTP for a user",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "OTP value",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OTP"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OTP verified successfully"
+          }
+        }
+      }
+    },
+    "/user/{username}": {
+      "patch": {
+        "summary": "Reset User",
+        "description": "Reset user details for a given username",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "User reset successful"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/reset/{username}": {
+      "patch": {
+        "summary": "Reset Password",
+        "description": "Reset password for a given username",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Password reset successful"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/delete/{username}": {
+      "delete": {
+        "tags": ["del"],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "consumes": ["application/json"],
+        "produces": [],
+        "responses": {},
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}
