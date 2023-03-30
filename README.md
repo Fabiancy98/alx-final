@@ -1,6 +1,6 @@
 # LOGIN SYSTEM WEB API
 
-This is a LOGIN SYSTEM WEB API that allows users to login, register, get and update profile, reset password. It is designed using Node.js(express). You can view the live demo of the project by visiting this link: https://superlative-kashata-ac54cc.netlify.app/
+This is a LOGIN SYSTEM WEB API that allows users to login, register, get and update profile, reset password. It is designed using Node.js(express). You can view the live demo of the project by visiting this link: https://alx-final.onrender.com
 
 ## Features
 
@@ -19,14 +19,14 @@ After that create a file in the Server Folder with the name config.js and put th
 config.js
 ```
 export default {
-    JWT_SECRET : "<secret>",
-    EMAIL: "steve.franecki@ethereal.email", // testing email & password
-    PASSWORD : "sMf46xCzrvdrxvuagc",
-    ATLAS_URI: "<MONGODB_ATLAS_URI>"
+    MONGO_URI=mongodb+srv://<user>:<password>@cluster0.yiiyw.mongodb.net/?retryWrites=true&w=majority
+    USER_MAIL =  email@gmail.com
+    USER_PASS =  email generated password 
+"
 }
 ```
 
-> **Note:** The **ATLAS_URI** is important to work this project.
+> **Note:** The **MONGO_URI** is important to work this project.
 
 Now, create all these variables in the project and make sure you set ATLAS_URI variable.
 Otherwise, the project will not work.
