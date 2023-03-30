@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://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@github.com/SkipperAfrica/skipper_backend.git"
+    "url": "git+https://github.com/Fabiancy98/alx-final.git.git"
   },
   "keywords": [],
   "author": "Omoboye Moses",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SkipperAfrica/skipper_backend/issues"
+    "url": "https://github.com/Fabiancy98/alx-final.git/issues"
   },
-  "homepage": "https://github.com/SkipperAfrica/skipper_backend#readme",
+  "homepage": "https://github.com/Fabiancy98/alx-final.git#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
