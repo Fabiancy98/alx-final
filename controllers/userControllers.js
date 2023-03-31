@@ -108,10 +108,7 @@ module.exports.logoutall_post = async (req, res) => {
 // EDIT PROFILE CUSTOMER
 module.exports.user_patch_customer = async (req, res) => {
   const updates = Object.keys(req.body);
-  const allowedUpdates = [
-    'email',
-    'username',
-  ];
+  const allowedUpdates = ['email', 'username'];
   const isValidOperation = updates.every(updates => {
     return allowedUpdates.includes(updates);
   });
@@ -255,7 +252,7 @@ module.exports.reset_password = async (req, res) => {
 
 // VERIFY USER
 module.exports.verify_user = async (req, res) => {
-  const email = req.body;
+  const { email } = req.body;
 
   if (email) {
     await User.verifyEmail(email);
