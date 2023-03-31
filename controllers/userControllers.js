@@ -255,14 +255,13 @@ module.exports.reset_password = async (req, res) => {
 
 // VERIFY USER
 module.exports.verify_user = async (req, res) => {
-  const username = req.body;
+  const email = req.body;
 
-  if (username) {
-    await User.verifyUsername(username);
+  if (email) {
+    await User.verifyEmail(email);
   } else {
-    console.log('You have registered with this username.');
     return res.send({
-      message: 'You have registered with this username.',
+      message: 'You have registered with this email.',
     });
   }
 };
