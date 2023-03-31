@@ -4,7 +4,7 @@
     "title": "New Collection",
     "version": "1.0.0"
   },
-  "host": "https://alx-final.onrender.com",
+  "host": "alx-final.onrender.com",
   "basePath": "/",
   "schemes": ["http"],
   "paths": {
@@ -213,6 +213,25 @@
         "consumes": ["application/json"],
         "produces": [],
         "responses": {},
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/find/{username}": {
+      "get": {
+        "tags": ["get_user"],
+        "summary": "Gets the details of a user",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Get User profile successfully"
+          }
+        },
         "security": [
           {
             "Bearer": []

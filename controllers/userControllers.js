@@ -109,11 +109,8 @@ module.exports.logoutall_post = async (req, res) => {
 module.exports.user_patch_customer = async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = [
-    'firstName',
-    'lastName',
     'email',
     'username',
-    'address',
   ];
   const isValidOperation = updates.every(updates => {
     return allowedUpdates.includes(updates);

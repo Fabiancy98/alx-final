@@ -5,7 +5,7 @@ const userController = require('../controllers/userControllers');
 const router = Router();
 
 router.get('/', userController.home_get);
-router.get('/find/:username', userController.findUser);
+router.get('/find/:username', auth, userController.findUser);
 router.post('/signup', userController.signup_post);
 router.post('/login', userController.login_post);
 router.post('/logout', auth, userController.logoutall_post);
