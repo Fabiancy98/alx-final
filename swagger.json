@@ -22,6 +22,17 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/User"
+            },
+            "properties": {
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              }
             }
           }
         ],
@@ -44,6 +55,17 @@
             "in": "body",
             "description": "User credentials",
             "required": true,
+            "properties": {
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              }
+            },
             "schema": {
               "$ref": "#/definitions/Credentials"
             }
@@ -87,6 +109,11 @@
             "in": "body",
             "description": "User email",
             "required": true,
+            "properties": {
+              "email": {
+                "type": "string"
+              }
+            },
             "schema": {
               "$ref": "#/definitions/Email"
             }
@@ -111,6 +138,11 @@
             "in": "body",
             "description": "OTP value",
             "required": true,
+            "properties": {
+              "otp": {
+                "type": "string"
+              }
+            },
             "schema": {
               "$ref": "#/definitions/OTP"
             }
@@ -146,19 +178,10 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
-                  "type": "string"
-                },
-                "lastName": {
-                  "type": "string"
-                },
                 "email": {
                   "type": "string"
                 },
                 "username": {
-                  "type": "string"
-                },
-                "address": {
                   "type": "string"
                 }
               }
