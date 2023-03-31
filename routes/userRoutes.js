@@ -16,12 +16,7 @@ router.patch('/reset/:username', userController.reset_password);
 router.patch('/user/:username', auth, userController.user_patch_customer);
 router.delete('/delete/:username', auth, userController.delete_user);
 
-router.post(
-  '/generate-otp',
-  userController.verify_user,
-  localVariables,
-  userController.gen
-);
-router.post('/verify-otp', userController.verify_user, userController.verify);
+router.post('/generate-otp', localVariables, userController.gen);
+router.post('/verify-otp', userController.verify);
 
 module.exports = router;
