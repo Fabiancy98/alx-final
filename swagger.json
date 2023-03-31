@@ -4,7 +4,7 @@
     "title": "New Collection",
     "version": "1.0.0"
   },
-  "host": "localhost:5000",
+  "host": "https://alx-final.onrender.com",
   "basePath": "/",
   "schemes": ["http"],
   "paths": {
